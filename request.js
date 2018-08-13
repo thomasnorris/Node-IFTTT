@@ -4,6 +4,7 @@ const IFTTT_KEY = requireLocal('ifttt-key.js').GetKey();
 
 class Request {
     constructor(eventName, val1, val2, val3) {
+        this.Client = new _client();
         this.EventName = eventName;
         this.Url = 'https://maker.ifttt.com/trigger/' + eventName + '/with/key/' + IFTTT_KEY;
         this.Args = {
@@ -18,9 +19,15 @@ class Request {
         };
     }
 
-    Post() {
-        new _client().post(this.Url, this.Args, (data, res) => {
-            console.log(res);
+    Post(callback) {
+        this.Client.post(this.Url, this.Args, (data, res) => {
+            callback(data);
+        });
+    }
+
+    Get(callback) {
+        this.Client.get(this.Url, this.Args, (data, res) => {
+            callback(data);
         });
     }
 }
