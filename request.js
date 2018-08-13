@@ -19,14 +19,9 @@ class Request {
         };
     }
 
-    Post(callback) {
+    // --A POST vs GET does not matter since IFTTT only looks for the Event Name on any request
+    Send(callback) {
         this.Client.post(this.Url, this.Args, (data, res) => {
-            callback(data, res);
-        });
-    }
-
-    Get(callback) {
-        this.Client.get(this.Url, this.Args, (data, res) => {
             callback(data, res);
         });
     }
