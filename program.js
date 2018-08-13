@@ -1,11 +1,12 @@
+global.requireLocal = require('local-modules.js').GetModule;
+
 (function() {
     var RestClient = require('node-rest-client').Client;
     var _client = new RestClient();
 
     // --Add key
-    const KEY = '';
+    const KEY = requireLocal('ifttt-key.js').GetKey();
     var testRequest = new Request('test_event', 'test value 1', 'test value 1', 'test value 3');
-
     // _client.post(testRequest.Url, testRequest.Args, (data, res) => {
 
     // });
