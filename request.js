@@ -21,13 +21,13 @@ class Request {
 
     Post(callback) {
         this.Client.post(this.Url, this.Args, (data, res) => {
-            callback(data);
+            callback(data, res);
         });
     }
 
     Get(callback) {
         this.Client.get(this.Url, this.Args, (data, res) => {
-            callback(data);
+            callback(data, res);
         });
     }
 }

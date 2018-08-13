@@ -5,7 +5,7 @@ global.requireLocal = require('local-modules.js').GetModule;
     // 'test_event' just sends an email with the params
     var req = new Request('test_event', 'new val 1', 'something', 'hi mom');
 
-    req.Post((data) => {
-
+    req.Post((data, res) => {
+        console.log(data, res);
     });
 })();
