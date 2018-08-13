@@ -3,7 +3,7 @@ var _client = require('node-rest-client').Client;
 const IFTTT_KEY = requireLocal('ifttt-key.js').GetKey();
 
 class Request {
-    constructor(eventName, val1, val2, val3) {
+    constructor(eventName, val1 = '', val2 = '', val3 = '') {
         this.Client = new _client();
         this.EventName = eventName;
         this.Url = 'https://maker.ifttt.com/trigger/' + eventName + '/with/key/' + IFTTT_KEY;
