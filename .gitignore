@@ -1,3 +1,6 @@
+# Custom
+!node_modules/local-modules.js
+ifttt-key.js
 # Logs
 logs
 *.log
@@ -34,7 +37,6 @@ build/Release
 
 # Dependency directories
 node_modules/*
-!node_modules/local-modules.js
 jspm_packages/
 
 # TypeScript v1 declaration files
